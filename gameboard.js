@@ -1,16 +1,23 @@
 var modal = document.getElementById('quesModal');
-var quesBtn = document.getElementsByClassName("gameRow")[1];
-var span = document.getElementsByClassName("close")[0];
+let timerCount = 0 ;
+let timerText = document.getElementById('timer')
 
 // When the user clicks on the button, open the modal 
-quesBtn.onclick = function() {
-    //display modal 
+$('.gameRow').on('click', function(){
+    
+    openAnswer( );
     modal.style.display = "block";
+});
 
 // close the modal from X 
-    span.onclick = function() {
+$('.close').on('click', function(){
+    //Stop The Timer
+    clearInterval(timerCount)
+
+    //Close the Question Window
     modal.style.display = "none";
-    }
+})
+   
 
 // close modal when clicking outside of box 
     window.onclick = function(event) {
@@ -19,14 +26,17 @@ quesBtn.onclick = function() {
         }
     }
 
+
+function openAnswer() {
 //init timer countdown 
-    let timer = document.getElementById('timer')
-    var i = 10; 
-    let timerCount = setInterval(countDown, 1000);
+   
+    var i = 11; 
+    timerCount = setInterval(countDown, 1000);
 
     function countDown (){
         i--;
-        timer.innerHTML = i; 
+        //this.timer = document.getElementById('timer')
+        timerText.innerHTML = i; 
 
         if (i == 0){
         //play buzzer sound 
@@ -34,18 +44,18 @@ quesBtn.onclick = function() {
         buzzer.play(); 
         
         //stop counter 
-        clearInterval(timerCount)
-        console.log("it stopped")
+        clearInterval(timerCount);
+       
+         modal.style.display = "none";
 
         }
+        //next, show times up screen and subtract points from score 
     }
 
-    //set timer to close modal when time runs out 
-    setTimeout(function(){ modal.style.display = "none"; }, 10000);
+    
 
 }
 
-//next, show times up screen and subtract points from score 
 
 
 //display question and answer choice parameters inside the modal//
@@ -61,7 +71,7 @@ function showQandA(question, answers){
     let questionText = document.getElementById('questionText');
 
     //answer1
-    let answer1 = document.getElementById('answer1');
+    let lblchoice1 = document.getElementById('lblchoice1');
 
     //answer2
     let answer2 = document.getElementById('answer2');
@@ -76,35 +86,57 @@ function showQandA(question, answers){
 
     questionText.innerHTML = question; 
 
-    answer1.innerHTML = answers[0]
+    lblchoice1.innerHTML = answers[0];
 
-    answer2.innerHTML = answers[1]
+    // answer1.value = answers[0]
+    // answer1.innerHTML = answers[0]
 
-    answer3.innerHTML = answers[2]
+    // answer2.innerHTML = answers[1]
 
-    answer4.innerHTML = answers[3]
+    // answer3.innerHTML = answers[2]
+
+    // answer4.innerHTML = answers[3]
 
 }
 
-showQandA("This is your question and the text goes here", ["answer 1", "answer2", "answer3", "answer4"])
+let input = document.getElementsByName("choice");
+
+console.log(input)
+
+
+
+showQandA("This is your question and the text goes here", ["I changed it", "answer2", "answer3", "answer4"])
+
+
+
+
+
+
 
 
 //determine what the correct answer is 
 
-function correctAnswer(){
-    
+function checkUserAnswer(rightAnswer){
+    //grab users answer? 
+
+
+    if (userAnswer == rightAnswer){
+        //display right answer screen
+        //add points to score 
+    }
+
 }
 
 //class contructor will get given the following arguments
 //question with answer choices and correct answer
 //position of question on gameboard using class index 
 class questions {
-    constructor(question, answers, points, rightanswer, index){
+    constructor(question, answers, points, rightanswer, category){
         this.question = question
         this.answers = answers
         this.rightanswer = rightanswer
         this.points = points
-        this.index = index
+        this.category = category
     }
 
     showQuestion(){
@@ -134,7 +166,7 @@ class questions {
     }
 
     hideQuestion(){
-        //make bo =x 
+        //make box 
     }
 
 }
