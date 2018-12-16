@@ -3,9 +3,8 @@ let timerCount = 0 ;
 let timerText = document.getElementById('timer')
 
 // When the user clicks on the button, open the modal 
-$('.gameRow').on('click', function(){
-    
-    openAnswer( );
+$('.boardQues').on('click', function(){
+    openModal();
     modal.style.display = "block";
 });
 
@@ -16,18 +15,10 @@ $('.close').on('click', function(){
 
     //Close the Question Window
     modal.style.display = "none";
-})
+});
    
 
-// close modal when clicking outside of box 
-    window.onclick = function(event) {
-        if (event.target == modal) {
-        modal.style.display = "none";
-        }
-    }
-
-
-function openAnswer() {
+function openModal() {
 //init timer countdown 
    
     var i = 11; 
@@ -47,16 +38,11 @@ function openAnswer() {
         clearInterval(timerCount);
        
          modal.style.display = "none";
-
         }
         //next, show times up screen and subtract points from score 
     }
 
-    
-
 }
-
-
 
 //display question and answer choice parameters inside the modal//
 
@@ -65,37 +51,36 @@ function showQandA(question, answers){
     //when button is clicked 
     //display this.questions and this.answers 
 
-    //grab divs with answers and questions 
+    //grab divs with answers and questions and change content based on argument input 
 
     //question Text
     let questionText = document.getElementById('questionText');
 
-    //answer1
-    let lblchoice1 = document.getElementById('lblchoice1');
-
-    //answer2
-    let answer2 = document.getElementById('answer2');
-
-    //answer3
-    let answer3 = document.getElementById('answer3');
-
-    //answer4 
-    let answer4 = document.getElementById('answer4');
-
-    //change innerHTML to parameters 
-
     questionText.innerHTML = question; 
 
-    lblchoice1.innerHTML = answers[0];
+    //answer1
+    let ansChoice1 = document.getElementById('ansChoice1');
+    
+    ansChoice1.innerHTML = answers[0];
+    ansChoice1.value = answers[0];
 
-    // answer1.value = answers[0]
-    // answer1.innerHTML = answers[0]
+    //answer2
+    let ansChoice2 = document.getElementById('ansChoice2');
+    
+    ansChoice2.innerHTML = answers[1];
+    ansChoice2.value = answers[1];
 
-    // answer2.innerHTML = answers[1]
+    //answer3
+    let ansChoice3 = document.getElementById('ansChoice3');
+    
+    ansChoice3.innerHTML = answers[2];
+    ansChoice3.value = answers[2];
 
-    // answer3.innerHTML = answers[2]
-
-    // answer4.innerHTML = answers[3]
+    //answer4 
+    let ansChoice4 = document.getElementById('ansChoice4');
+    
+    ansChoice4.innerHTML = answers[3];
+    ansChoice4.value = answers[3];
 
 }
 
@@ -105,12 +90,7 @@ console.log(input)
 
 
 
-showQandA("This is your question and the text goes here", ["I changed it", "answer2", "answer3", "answer4"])
-
-
-
-
-
+showQandA("This is your question and the text goes here", ["answer1", "answer2", "answer3", "answer4"])
 
 
 
