@@ -1,35 +1,98 @@
-
-// Get the modal
 var modal = document.getElementById('quesModal');
-
-// Get the button that opens the modal
-//change this to each ques button 
-// var quesBtn = document.getElementById("quesBtn");
-
 var quesBtn = document.getElementsByClassName("gameRow")[1];
-
-
-// Get the <span> element that closes the modal
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks on the button, open the modal 
 quesBtn.onclick = function() {
-  modal.style.display = "block";
-  //set timer to close modal when time runs out 
-  setTimeout(function(){ modal.style.display = "none"; }, 3000);
+    //display modal 
+    modal.style.display = "block";
 
-}
-
-// When the user clicks on <span> (x), close the modal
-span.onclick = function() {
-  modal.style.display = "none";
-}
-
-// When the user clicks anywhere outside of the modal, close it
-window.onclick = function(event) {
-  if (event.target == modal) {
+// close the modal from X 
+    span.onclick = function() {
     modal.style.display = "none";
-  }
+    }
+
+// close modal when clicking outside of box 
+    window.onclick = function(event) {
+        if (event.target == modal) {
+        modal.style.display = "none";
+        }
+    }
+
+//init timer countdown 
+    let timer = document.getElementById('timer')
+    var i = 10; 
+    let timerCount = setInterval(countDown, 1000);
+
+    function countDown (){
+        i--;
+        timer.innerHTML = i; 
+
+        if (i == 0){
+        //play buzzer sound 
+        let buzzer = new Audio ('sounds/timesup.mp3')
+        buzzer.play(); 
+        
+        //stop counter 
+        clearInterval(timerCount)
+        console.log("it stopped")
+
+        }
+    }
+
+    //set timer to close modal when time runs out 
+    setTimeout(function(){ modal.style.display = "none"; }, 10000);
+
+}
+
+//next, show times up screen and subtract points from score 
+
+
+//display question and answer choice parameters inside the modal//
+
+
+function showQandA(question, answers){
+    //when button is clicked 
+    //display this.questions and this.answers 
+
+    //grab divs with answers and questions 
+
+    //question Text
+    let questionText = document.getElementById('questionText');
+
+    //answer1
+    let answer1 = document.getElementById('answer1');
+
+    //answer2
+    let answer2 = document.getElementById('answer2');
+
+    //answer3
+    let answer3 = document.getElementById('answer3');
+
+    //answer4 
+    let answer4 = document.getElementById('answer4');
+
+    //change innerHTML to parameters 
+
+    questionText.innerHTML = question; 
+
+    answer1.innerHTML = answers[0]
+
+    answer2.innerHTML = answers[1]
+
+    answer3.innerHTML = answers[2]
+
+    answer4.innerHTML = answers[3]
+
+}
+
+showQandA("This is your question and the text goes here", ["answer 1", "answer2", "answer3", "answer4"])
+
+
+//determine what the correct answer is 
+
+function correctAnswer(){
+    
 }
 
 //class contructor will get given the following arguments
@@ -45,12 +108,20 @@ class questions {
     }
 
     showQuestion(){
-        //show users pop out modal 
-        quesBtn.onclick 
-        //display question and answers 
-        
+        ////////////////////////////
+        //show users pop out modal//
+        ////////////////////////////
+
+       
+
+
+        /////////////////////////////////
+        //display question and answers///
+        /////////////////////////////////
+
+
         //grab users answer
-        //if time runs out, say times up and close modal, subtract points
+        
     }
 
     checkAnswer(){
