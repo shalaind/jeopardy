@@ -27,11 +27,21 @@ wrongAnsScreen.style.display = "none";
 
 // When the user clicks on the button, open the modal 
 $('.boardQues').on('click', function(eventObject){
+    console.log(eventObject)
     //Set the Data for the Question inside the Modal
     let category = eventObject.target.className;
     category = category.replace('boardQues ','');
 
     let dollarValue = eventObject.target.innerText;
+
+     //remove question box
+    // document.getElementsByClassName('boardQues').style.color = "grey";
+    // document.getElementsByClassName('boardQues').style.backgroundColor = "black";
+    // document.getElementsByClassName('boardQues').style.pointerEvents = "none";
+    // $('.boardQues').css("background-color", "black");
+    eventObject.target.className = "boardQues " + category + " disabled";
+    // console.log(eventObject.target, 'this is the class name');
+    // document.getElementsByClassName("disabled").style.color = "grey";
 
     assignQandA(category, dollarValue); 
     startTimer();
@@ -179,11 +189,7 @@ function submitBtn(){
     //Close the Question Window
     modal.style.display = "none";
 
-    //remove question box
-    // document.getElementsByClassName('boardQues').style.color = "grey";
-    // document.getElementsByClassName('boardQues').style.backgroundColor = "black";
-    // document.getElementsByClassName('boardQues').style.pointerEvents = "none";
-    // $('.boardQues').css("background-color", "black")
+   
 }
 
 function timesUp(){

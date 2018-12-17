@@ -8,6 +8,12 @@
 
 }
 
+.disabled {
+  color: black;
+  background: black; 
+  pointer-events: none;
+}
+
 
 /* The Modal (background) */
 .modal {
