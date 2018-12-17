@@ -7,28 +7,29 @@
     <title>Jeopardy</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
-    <script defer src="gameboard.js"></script>
+    <script defer src="backup.js"></script>
 </head>
 <body>
+    <h1>THIS IS THE TESTER PAGE</h1>
     <div class="gameboard">
-        <div class="boardCat1">
+        <div class="boardCat">
 
-            <div class="boardQuesHeader">
-               Hip-Hop Artists
+            <div class="boardQues">
+                Category One
             </div>
-            <div class="boardQues category1">
+            <div class="boardQues">
                 $100
             </div>
-            <div class="boardQues category1">
+            <div class="boardQues">
                 $200
             </div>
-            <div class="boardQues category1">
+            <div class="boardQues">
                 $300
             </div>
-            <div class="boardQues category1">
+            <div class="boardQues">
                 $400
             </div>
-            <div class="boardQues category1">
+            <div class="boardQues">
                 $500
             </div>
 
@@ -122,11 +123,6 @@
         
         </div>
 
-        <div class="score">
-            <h1>player 1 score</h1>
-            <h2 id="player1Score">0</h2>
-        </div>
-
         <!-- Trigger/Open The Modal -->
         <!-- <button id="quesBtn">Open Modal</button> -->
 
@@ -135,8 +131,6 @@
 
         <!-- Modal content -->
         <div class="modal-content">
-            <!-- <div id="answerMessage"></div> -->
-
             <div><p id="timer">10</p></div>
             <span class="close">&times;</span>
             <div class="questionTextBox">
@@ -144,22 +138,23 @@
             </div>
             <div id="answerChoices">
                 <div>
-                    <input id="inputChoice1" type="radio" name="choice" value="text"> <span id="ansChoice1">sometxt</span>
+                    <input type="radio" name="choice" value="text"> <span id="ansChoice1">sometxt</span>
                 </div>
                 <div>
-                    <input id="inputChoice2" type="radio" name="choice" value="text"> <span id="ansChoice2">sometxt</span>
+                    <input type="radio" name="choice" value="text"> <span id="ansChoice2">sometxt</span>
                 </div>
                 <div>
-                    <input id="inputChoice3" type="radio" name="choice" value="text"> <span id="ansChoice3">sometxt</span>
+                    <input type="radio" name="choice" value="text"> <span id="ansChoice3">sometxt</span>
                 </div>
                 <div>
-                    <input id="inputChoice4" type="radio" name="choice" value="text"> <span id="ansChoice4">sometxt</span>
+                    <input type="radio" name="choice" value="text"> <span id="ansChoice4">sometxt</span>
                 </div>
             </div>
             <div class="submitBtn">
                 <button id="submitBtn">Submit</button>
             </div>
 
+        </div>
         </div>
     
 </body>

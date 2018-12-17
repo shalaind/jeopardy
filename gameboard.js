@@ -1,10 +1,28 @@
+//////////////////
+//OPEN THE MODAL//
+//////////////////
+
+
 var modal = document.getElementById('quesModal');
 let timerCount = 0 ;
 let timerText = document.getElementById('timer')
+let questionObj = {};
+let myPoints = 0; 
+let scoreDisplay1 = document.getElementById('player1Score')
 
 // When the user clicks on the button, open the modal 
-$('.boardQues').on('click', function(){
-    openModal();
+$('.boardQues').on('click', function(eventObject){
+    //Set the Data for the Question inside the Modal
+    let category = eventObject.target.className;
+    category = category.replace('boardQues ','');
+
+    let dollarValue = eventObject.target.innerText;
+
+    assignQandA(category, dollarValue); 
+    startTimer();
+
+    console.log(eventObject.target.innerText, 'event InnerText');
+    console.log(eventObject.target.className)
     modal.style.display = "block";
 });
 
@@ -18,7 +36,7 @@ $('.close').on('click', function(){
 });
    
 
-function openModal() {
+function startTimer() {
 //init timer countdown 
    
     var i = 11; 
@@ -46,152 +64,249 @@ function openModal() {
 
 //display question and answer choice parameters inside the modal//
 
+let questionText = document.getElementById('questionText');
+let ansChoice1 = document.getElementById('ansChoice1');
+let ansChoice2 = document.getElementById('ansChoice2');
+let ansChoice3 = document.getElementById('ansChoice3');
+let ansChoice4 = document.getElementById('ansChoice4');
 
-function showQandA(question, answers){
+let inputChoice1 = document.getElementById('inputChoice1');
+let inputChoice2 = document.getElementById('inputChoice2');
+let inputChoice3 = document.getElementById('inputChoice3');
+let inputChoice4 = document.getElementById('inputChoice4');
+
+function assignQandA(category, dollarValue){
+    //Remove Any $ from dollarValue
+    dollarValue = dollarValue.replace('$','');
+    
+    for(i = 0; i <= gameData.length-1; i++){
+        if (gameData[i].category== category) {
+            console.log(dollarValue)
+
+
+            //Now we have the right category loop to the right dollar value
+            questions = gameData[i].questions;
+            for(y=0; y <= questions.length -1; y++){
+                if(questions[y].dollarvalue == dollarValue){
+
+                    questionObj = questions[y];
+                }
+            }
+        }
+    }
+
+    
     //when button is clicked 
     //display this.questions and this.answers 
 
     //grab divs with answers and questions and change content based on argument input 
-
+    
     //question Text
-    let questionText = document.getElementById('questionText');
-
-    questionText.innerHTML = question; 
+    
+    questionText.innerHTML = questionObj.questiontext;
 
     //answer1
-    let ansChoice1 = document.getElementById('ansChoice1');
     
-    ansChoice1.innerHTML = answers[0];
-    ansChoice1.value = answers[0];
+    ansChoice1.innerHTML = questionObj.choices[0].text
+    inputChoice1.value = questionObj.choices[0].text
 
     //answer2
-    let ansChoice2 = document.getElementById('ansChoice2');
     
-    ansChoice2.innerHTML = answers[1];
-    ansChoice2.value = answers[1];
+    ansChoice2.innerHTML = questionObj.choices[1].text
+    inputChoice2.value = questionObj.choices[1].text
 
     //answer3
-    let ansChoice3 = document.getElementById('ansChoice3');
     
-    ansChoice3.innerHTML = answers[2];
-    ansChoice3.value = answers[2];
+    ansChoice3.innerHTML = questionObj.choices[2].text
+    inputChoice3.value = questionObj.choices[2].text
 
     //answer4 
-    let ansChoice4 = document.getElementById('ansChoice4');
     
-    ansChoice4.innerHTML = answers[3];
-    ansChoice4.value = answers[3];
+    ansChoice4.innerHTML = questionObj.choices[3].text
+    inputChoice4.value = questionObj.choices[3].text
 
 }
 
-let input = document.getElementsByName("choice");
 
-console.log(input)
-
-
-
-showQandA("This is your question and the text goes here", ["answer1", "answer2", "answer3", "answer4"])
+///////////////////////
+//CHECK USER'S ANSWER//
+///////////////////////
 
 
 
-//determine what the correct answer is 
+$('#submitBtn').on('click', submitBtn);
 
-function checkUserAnswer(rightAnswer){
-    //grab users answer? 
+function submitBtn(){
+    var inputChoices = document.getElementsByName("choice");
+    // var checked = false; 
+    var userAnswer; 
+    
+    for(let i = 0; i < inputChoices.length; i++){
+        if(inputChoices[i].checked){
+            // checked = true; 
+            userAnswer = inputChoices[i].value
+        }
 
+        if(userAnswer == questionObj.rightchoice){
+            //show correct answer screen
+            //add points
+            
+            myPoints += questionObj.dollarvalue;
 
-    if (userAnswer == rightAnswer){
-        //display right answer screen
-        //add points to score 
-    }
+            scoreDisplay1.innerHTML = myPoints; 
 
-}
+            console.log(userAnswer) 
 
-//class contructor will get given the following arguments
-//question with answer choices and correct answer
-//position of question on gameboard using class index 
-class questions {
-    constructor(question, answers, points, rightanswer, category){
-        this.question = question
-        this.answers = answers
-        this.rightanswer = rightanswer
-        this.points = points
-        this.category = category
-    }
-
-    showQuestion(){
-        ////////////////////////////
-        //show users pop out modal//
-        ////////////////////////////
-
+            console.log(myPoints)
+            
+            // break
+        }
+        // else {
+        //     myPoints -= questionObj.dollarvalue;
+        // }
        
-
-
-        /////////////////////////////////
-        //display question and answers///
-        /////////////////////////////////
-
-
-        //grab users answer
-        
     }
 
-    checkAnswer(){
-        //compare user answer to correct answer 
-        //if users answer is the same as correct answer
-        //show the you got it right screen
-        //add correct points to current score
-        //if false show wrong answer screen
-        //and deduct points 
-    }
+    //Stop The Timer
+    clearInterval(timerCount)
 
-    hideQuestion(){
-        //make box 
-    }
-
+    //Close the Question Window
+    modal.style.display = "none";
+    
 }
 
 
+var gameData = [
+ {
+    category: 'category1',
+    questions: [
+        {
+            questiontext: 'This is the capital of Mexico',
+            rightchoice: 'Choice 2',
+            dollarvalue: 100,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my second question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 200,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my third question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 300,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fourth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 400,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fifth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 500,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        }
+    ]
+}]
 
 
 
-
-
-// class questions {
-//         question1 = "what is so and so"
-//         answers = ["one","two","three","four"]
-//         correctanswer = ["one"]
-//         points = 100
-//     }
-
-//     showModal(){
-//         //
-//         //
-
-//         //show users pop out modal 
-//         //display question and answers 
-//         //grab users answer
-//         //if time runs out, say times up and close modal, subtract points
-//     }
-
-//     checkAnswer(){
-//         //compare user answer to correct answer 
-//         //if users answer is the same as correct answer
-//         //show the you got it right screen
-//         //add correct points to current score
-//         //if false show wrong answer screen
-//         //and deduct points 
-//     }
-
-//     hideQuestion(){
-//         //make bo =x 
-//     }
-
-    
-
-// }
-
-
-
-// add event listerner (onclick, catONe100.showmodal())
-// add event listerner (onclick, catONe100.showmodal())
