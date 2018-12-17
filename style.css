@@ -1,5 +1,6 @@
 .gameboard{
     display: flex;
+    border: solid black; 
 }
 
 .boardQues {

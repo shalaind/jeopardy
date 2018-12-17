@@ -9,6 +9,21 @@ let timerText = document.getElementById('timer')
 let questionObj = {};
 let myPoints = 0; 
 let scoreDisplay1 = document.getElementById('player1Score')
+// let boardQues = document.getElementById('boardQues1')
+// let boardQues = $('.boardQues')
+// let boardQues = document.getElementsByClassName('boardQues')
+// let boardQues = document.querySelectorAll(".boardQues")
+
+
+
+let timesUpScreen = document.getElementById('timesUpScreen')
+let rightAnsScreen = document.getElementById('rightAnsScreen')
+let wrongAnsScreen = document.getElementById('wrongAnsScreen')
+
+//close other modal content 
+timesUpScreen.style.display = "none";
+rightAnsScreen.style.display = "none";
+wrongAnsScreen.style.display = "none";
 
 // When the user clicks on the button, open the modal 
 $('.boardQues').on('click', function(eventObject){
@@ -88,16 +103,11 @@ function assignQandA(category, dollarValue){
             questions = gameData[i].questions;
             for(y=0; y <= questions.length -1; y++){
                 if(questions[y].dollarvalue == dollarValue){
-
                     questionObj = questions[y];
                 }
             }
         }
     }
-
-    
-    //when button is clicked 
-    //display this.questions and this.answers 
 
     //grab divs with answers and questions and change content based on argument input 
     
@@ -138,43 +148,67 @@ $('#submitBtn').on('click', submitBtn);
 
 function submitBtn(){
     var inputChoices = document.getElementsByName("choice");
-    // var checked = false; 
     var userAnswer; 
     
     for(let i = 0; i < inputChoices.length; i++){
         if(inputChoices[i].checked){
-            // checked = true; 
             userAnswer = inputChoices[i].value
-        }
-
-        if(userAnswer == questionObj.rightchoice){
-            //show correct answer screen
-            //add points
-            
-            myPoints += questionObj.dollarvalue;
-
-            scoreDisplay1.innerHTML = myPoints; 
-
             console.log(userAnswer) 
-
-            console.log(myPoints)
-            
-            // break
+            break;
         }
-        // else {
-        //     myPoints -= questionObj.dollarvalue;
-        // }
-       
     }
 
+    if(userAnswer == questionObj.rightchoice){
+     //show correct answer screen
+        myPoints += questionObj.dollarvalue;
+        scoreDisplay1.innerHTML = myPoints; 
+
+        console.log(myPoints)
+    }
+
+    else if (userAnswer != questionObj.rightchoice){
+        myPoints -= questionObj.dollarvalue;
+        scoreDisplay1.innerHTML = myPoints; 
+
+        console.log(questionObj.dollarvalue)
+    }
+       
     //Stop The Timer
     clearInterval(timerCount)
 
     //Close the Question Window
     modal.style.display = "none";
-    
+
+    //remove question box
+    // document.getElementsByClassName('boardQues').style.color = "grey";
+    // document.getElementsByClassName('boardQues').style.backgroundColor = "black";
+    // document.getElementsByClassName('boardQues').style.pointerEvents = "none";
+    // $('.boardQues').css("background-color", "black")
 }
 
+function timesUp(){
+    timesUpScreen.style.display = "block";
+    rightAnsScreen.style.display = "none";
+    wrongAnsScreen.style.display = "none";
+    //grab h2 div 
+    //select inner html and use dollarvalue in display
+}
+
+function rightAns(){
+    rightAnsScreen.style.display = "block";
+    wrongAnsScreen.style.display = "none";
+    timesUpScreen.style.display = "none";
+}
+
+function wrongAns(){
+    wrongAnsScreen.style.display = "block";
+    rightAnsScreen.style.display = "none";
+    timesUpScreen.style.display = "none";
+}
+
+////////////////////
+//GAME INFORMATION//
+////////////////////
 
 var gameData = [
  {
@@ -306,7 +340,533 @@ var gameData = [
             ]
         }
     ]
-}]
+},
+
+{
+category: 'category2',
+    questions: [
+        {
+            questiontext: 'This is the capital of Mexico',
+            rightchoice: 'Choice 2',
+            dollarvalue: 100,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my second question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 200,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my third question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 300,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fourth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 400,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fifth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 500,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        }
+    ]
+}, 
+
+{
+category: 'category3',
+    questions: [
+        {
+            questiontext: 'This is the capital of Mexico',
+            rightchoice: 'Choice 2',
+            dollarvalue: 100,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my second question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 200,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my third question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 300,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fourth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 400,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fifth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 500,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        }
+    ]
+},
+
+{
+category: 'category4',
+    questions: [
+        {
+            questiontext: 'This is the capital of Mexico',
+            rightchoice: 'Choice 2',
+            dollarvalue: 100,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my second question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 200,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my third question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 300,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fourth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 400,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fifth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 500,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        }
+    ]
+},
+
+{
+    category: 'category5',
+    questions: [
+        {
+            questiontext: 'This is the capital of Mexico',
+            rightchoice: 'Choice 2',
+            dollarvalue: 100,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my second question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 200,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my third question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 300,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fourth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 400,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        },
+        {
+            questiontext: 'This is my fifth question',
+            rightchoice: 'Choice 2',
+            dollarvalue: 500,
+            choices: [
+                {
+                    id: 0,
+                    text: "Choice 1"
+                },
+                {
+                    id: 1,
+                    text: "Choice 2"
+                }
+                ,
+                {
+                    id: 2,
+                    text: "Choice 3"
+                },
+                {
+                    id: 3,
+                    text: "Choice 4"
+                }
+
+            ]
+        }
+    ]
+}
+
+]
 
 
 
