@@ -540,26 +540,26 @@ category: 'category3',
             ]
         },
         {
-            questiontext: 'This is my third question',
-            rightchoice: 'Choice 2',
+            questiontext: 'Hoopz, New York, Hottie, and Pumkin were contestants on this show',
+            rightchoice: 'Flavor of Love',
             dollarvalue: 300,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Flavor of Love 1"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Flavor of Love 2"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "For the Love of Money"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "I Love Ray J"
                 }
 
             ]
