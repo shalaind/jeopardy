@@ -9,21 +9,15 @@ let timerText = document.getElementById('timer')
 let questionObj = {};
 let myPoints = 0; 
 let scoreDisplay1 = document.getElementById('player1Score')
-// let boardQues = document.getElementById('boardQues1')
-// let boardQues = $('.boardQues')
-// let boardQues = document.getElementsByClassName('boardQues')
-// let boardQues = document.querySelectorAll(".boardQues")
 
+// let timesUpScreen = document.getElementById('timesUpScreen')
+// let rightAnsScreen = document.getElementById('rightAnsScreen')
+// let wrongAnsScreen = document.getElementById('wrongAnsScreen')
 
-
-let timesUpScreen = document.getElementById('timesUpScreen')
-let rightAnsScreen = document.getElementById('rightAnsScreen')
-let wrongAnsScreen = document.getElementById('wrongAnsScreen')
-
-//close other modal content 
-timesUpScreen.style.display = "none";
-rightAnsScreen.style.display = "none";
-wrongAnsScreen.style.display = "none";
+// //close other modal content 
+// timesUpScreen.style.display = "none";
+// rightAnsScreen.style.display = "none";
+// wrongAnsScreen.style.display = "none";
 
 // When the user clicks on the button, open the modal 
 $('.boardQues').on('click', function(eventObject){
@@ -34,14 +28,9 @@ $('.boardQues').on('click', function(eventObject){
 
     let dollarValue = eventObject.target.innerText;
 
-     //remove question box
-    // document.getElementsByClassName('boardQues').style.color = "grey";
-    // document.getElementsByClassName('boardQues').style.backgroundColor = "black";
-    // document.getElementsByClassName('boardQues').style.pointerEvents = "none";
-    // $('.boardQues').css("background-color", "black");
+   //adding class of disabled to remove question from board once clicked 
     eventObject.target.className = "boardQues " + category + " disabled";
-    // console.log(eventObject.target, 'this is the class name');
-    // document.getElementsByClassName("disabled").style.color = "grey";
+
 
     assignQandA(category, dollarValue); 
     startTimer();
@@ -173,6 +162,20 @@ function submitBtn(){
         myPoints += questionObj.dollarvalue;
         scoreDisplay1.innerHTML = myPoints; 
 
+        //Stop The Timer
+        clearInterval(timerCount)
+    
+        //Close the Question Window
+        modal.style.display = "none";
+           //Stop The Timer
+        clearInterval(timerCount)
+    
+        //Close the Question Window
+        modal.style.display = "none";
+        let correctAnswerSound = new Audio ('sounds/correctAnswer.mp3')
+        correctAnswerSound.play(); 
+        swal ( "You got it right!" ,  "You earned " + questionObj.dollarvalue + " points" )
+
         console.log(myPoints)
     }
 
@@ -180,35 +183,44 @@ function submitBtn(){
         myPoints -= questionObj.dollarvalue;
         scoreDisplay1.innerHTML = myPoints; 
 
+        //Stop The Timer
+           clearInterval(timerCount)
+    
+        //Close the Question Window
+           modal.style.display = "none";
+            //play wrong answer sound 
+            let wrongAnswerSound = new Audio ('sounds/wrongAnswer.mp3')
+            wrongAnswerSound.play(); 
+         
+           swal ( "You're wrong!" ,  "You lose " + questionObj.dollarvalue + " points" )
+
+
+
+
         console.log(questionObj.dollarvalue)
     }
        
-    //Stop The Timer
-    clearInterval(timerCount)
-
-    //Close the Question Window
-    modal.style.display = "none";
 }
 
-function timesUp(){
-    timesUpScreen.style.display = "block";
-    rightAnsScreen.style.display = "none";
-    wrongAnsScreen.style.display = "none";
-    //grab h2 div 
-    //select inner html and use dollarvalue in display
-}
+// function timesUp(){
+//     timesUpScreen.style.display = "block";
+//     rightAnsScreen.style.display = "none";
+//     wrongAnsScreen.style.display = "none";
+//     //grab h2 div 
+//     //select inner html and use dollarvalue in display
+// }
 
-function rightAns(){
-    rightAnsScreen.style.display = "block";
-    wrongAnsScreen.style.display = "none";
-    timesUpScreen.style.display = "none";
-}
+// function rightAns(){
+//     rightAnsScreen.style.display = "block";
+//     wrongAnsScreen.style.display = "none";
+//     timesUpScreen.style.display = "none";
+// }
 
-function wrongAns(){
-    wrongAnsScreen.style.display = "block";
-    rightAnsScreen.style.display = "none";
-    timesUpScreen.style.display = "none";
-}
+// function wrongAns(){
+//     wrongAnsScreen.style.display = "block";
+//     rightAnsScreen.style.display = "none";
+//     timesUpScreen.style.display = "none";
+// }
 
 ////////////////////
 //GAME INFORMATION//
