@@ -319,7 +319,7 @@ var gameData = [
             ]
         },
         {
-            questiontext: 'This popular messaging app featured a running man logo',
+            questiontext: 'This popular instant messaging app featured a running man logo',
             rightchoice: 'AIM',
             dollarvalue: 400,
             choices: [
@@ -334,7 +334,7 @@ var gameData = [
                 ,
                 {
                     id: 2,
-                    text: "Tagged"
+                    text: "AOL Mail"
                 },
                 {
                     id: 3,
