@@ -269,7 +269,7 @@ var gameData = [
             ]
         },
         {
-            questiontext: "This popular software, notoriously known for giving your computer a virus, was used to download music" ,
+            questiontext: "This computer application, notoriously known for giving your computer a virus, was used to download music" ,
             rightchoice: 'Limewire',
             dollarvalue: 200,
             choices: [
