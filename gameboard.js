@@ -525,7 +525,7 @@ category: 'category3',
                 },
                 {
                     id: 3,
-                    text: "Kenya"
+                    text: "Calvin"
                 }
 
             ]
