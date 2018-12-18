@@ -210,13 +210,13 @@ function submitBtn(){
     }
 
 
-    // if(checkCounter == 3){
-    //     console.log("it worked")
-    //     modal.style.display = "block";
+    if(checkCounter == 3){
+        console.log("it worked")
+        modal.style.display = "block";
 
-    //     // swal ( "Times Up!" ,  "You lose " + questionObj.dollarvalue + " points" )
-    //     console.log("sweet alert worked too")
-    // }
+        // swal ( "Times Up!" ,  "You lose " + questionObj.dollarvalue + " points" )
+        console.log("sweet alert worked too")
+    }
        
 }
 
