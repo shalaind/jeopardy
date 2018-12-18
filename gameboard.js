@@ -500,16 +500,16 @@ category: 'category3',
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Drew"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Kevin"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Kenya"
                 }
 
             ]
@@ -621,51 +621,51 @@ category: 'category3',
 category: 'category4',
     questions: [
         {
-            questiontext: 'This is the capital of Mexico',
-            rightchoice: 'Choice 2',
+            questiontext: 'In this scene, a little boy by the name of ____ was pronounced dead and his mentor punched a whole into the wall',
+            rightchoice: 'Lil Saint',
             dollarvalue: 100,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Lil Saint"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Lil Baby"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Baby Boy"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Young Saint"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my second question',
-            rightchoice: 'Choice 2',
+            questiontext: 'The phrase, "No more locked doors!, comes from the movie ___',
+            rightchoice: 'Next Friday',
             dollarvalue: 200,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Friday"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "All About the Benjamins"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Next Friday"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Norbit"
                 }
 
             ]
