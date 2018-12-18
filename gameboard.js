@@ -490,13 +490,13 @@ category: 'category2',
 category: 'category3',
     questions: [
         {
-            questiontext: 'This is the capital of Mexico',
-            rightchoice: 'Choice 2',
+            questiontext: 'Everybody hates this person',
+            rightchoice: 'Chris',
             dollarvalue: 100,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Chris"
                 },
                 {
                     id: 1,
@@ -515,26 +515,26 @@ category: 'category3',
             ]
         },
         {
-            questiontext: 'This is my second question',
-            rightchoice: 'Choice 2',
+            questiontext: "What was the name of Mr and Mrs Kyle's youngest child",
+            rightchoice: 'Kady',
             dollarvalue: 200,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Kady"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Claire"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Katie"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Brianna"
                 }
 
             ]
