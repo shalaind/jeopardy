@@ -10,14 +10,14 @@ let questionObj = {};
 let myPoints = 0; 
 let scoreDisplay1 = document.getElementById('player1Score')
 
-// let timesUpScreen = document.getElementById('timesUpScreen')
-// let rightAnsScreen = document.getElementById('rightAnsScreen')
-// let wrongAnsScreen = document.getElementById('wrongAnsScreen')
+var aimImg = document.createElement("aimImg");
+ 
+aimImg.src = "images/aim-screen.jpg";
+modal.appendChild(aimImg);
 
-// //close other modal content 
-// timesUpScreen.style.display = "none";
-// rightAnsScreen.style.display = "none";
-// wrongAnsScreen.style.display = "none";
+console.log(aimImg.src)
+
+
 
 // When the user clicks on the button, open the modal 
 $('.boardQues').on('click', function(eventObject){
@@ -30,6 +30,15 @@ $('.boardQues').on('click', function(eventObject){
 
    //adding class of disabled to remove question from board once clicked 
     eventObject.target.className = "boardQues " + category + " disabled";
+
+    //gameover screen 
+
+    // if (){
+    //     swal ( "Game Over!" ,  "You earned " + questionObj.dollarvalue + " points" )
+    
+    // }
+
+
 
 
     assignQandA(category, dollarValue); 
@@ -159,7 +168,7 @@ function submitBtn(){
     if(userAnswer == questionObj.rightchoice){
      //show correct answer screen
         myPoints += questionObj.dollarvalue;
-        scoreDisplay1.innerHTML = myPoints; 
+        scoreDisplay1.innerHTML ="score: " + myPoints; 
 
         //Stop The Timer
         clearInterval(timerCount)
@@ -175,12 +184,11 @@ function submitBtn(){
         correctAnswerSound.play(); 
         swal ( "You got it right!" ,  "You earned " + questionObj.dollarvalue + " points" )
 
-        console.log(myPoints)
     }
 
     else if (userAnswer != questionObj.rightchoice){
         myPoints -= questionObj.dollarvalue;
-        scoreDisplay1.innerHTML = myPoints; 
+        scoreDisplay1.innerHTML = "score: " + myPoints; 
 
         //Stop The Timer
            clearInterval(timerCount)
@@ -192,34 +200,24 @@ function submitBtn(){
             wrongAnswerSound.play(); 
          
            swal ( "You're wrong!" ,  "You lose " + questionObj.dollarvalue + " points" )
-
-
-
-
-        console.log(questionObj.dollarvalue)
     }
        
 }
 
-// function timesUp(){
-//     timesUpScreen.style.display = "block";
-//     rightAnsScreen.style.display = "none";
-//     wrongAnsScreen.style.display = "none";
-//     //grab h2 div 
-//     //select inner html and use dollarvalue in display
-// }
+//game over screen
 
-// function rightAns(){
-//     rightAnsScreen.style.display = "block";
-//     wrongAnsScreen.style.display = "none";
-//     timesUpScreen.style.display = "none";
-// }
+//when all boardques classes == disabled
 
-// function wrongAns(){
-//     wrongAnsScreen.style.display = "block";
-//     rightAnsScreen.style.display = "none";
-//     timesUpScreen.style.display = "none";
-// }
+
+
+//alert game over show final score 
+
+//for loop run through all divs 
+
+//when all classNames == disabled
+
+//show alert 
+
 
 ////////////////////
 //GAME INFORMATION//
@@ -230,126 +228,126 @@ var gameData = [
     category: 'category1',
     questions: [
         {
-            questiontext: 'This is the capital of Mexico',
-            rightchoice: 'Choice 2',
+            questiontext: 'Your best friend would be upset if they were not in your ______ on Myspace  ',
+            rightchoice: 'Top 8',
             dollarvalue: 100,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Top 8"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Friend's List"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Top Friend's"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Top Group"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my second question',
-            rightchoice: 'Choice 2',
+            questiontext: "This popular software, notoriously known for giving your computer a virus, was used to download music" ,
+            rightchoice: 'Limewire',
             dollarvalue: 200,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Limewire"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Highwire"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Itunes"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Musicshare"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my third question',
-            rightchoice: 'Choice 2',
+            questiontext: 'The style of texting that requires you to press a number key to get to a designated letter',
+            rightchoice: 'T9',
             dollarvalue: 300,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Number Text"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "T9"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "2 Way"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Emoticons"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my fourth question',
-            rightchoice: 'Choice 2',
+            questiontext: 'This popular messaging app featured a running man logo',
+            rightchoice: 'AIM',
             dollarvalue: 400,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "AIM"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Myspace"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Tagged"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Facebook"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my fifth question',
-            rightchoice: 'Choice 2',
+            questiontext: ":-)  :-(  :-| <br> These character based facial expressions were called _____.",
+            rightchoice: 'Emoticons',
             dollarvalue: 500,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Emoticons"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Emojis"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Text Faces"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Emotion Icons"
                 }
 
             ]
@@ -361,51 +359,51 @@ var gameData = [
 category: 'category2',
     questions: [
         {
-            questiontext: 'This is the capital of Mexico',
+            questiontext: "From the C-O to across the seas, I'm guaranteed to everybody bounce with me",
             rightchoice: 'Choice 2',
             dollarvalue: 100,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Bounce With Me"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "The Block is Hot"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Take Ya Home"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "No Scrubs"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my second question',
-            rightchoice: 'Choice 2',
+            questiontext: "Yea you like my outfit don't even fake the deal, I thought you said you had ya girl on the light bill",
+            rightchoice: 'Chickenhead',
             dollarvalue: 200,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "On & On"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Still Fly"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Chickenhead"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Soldier"
                 }
 
             ]

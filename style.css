@@ -1,24 +1,46 @@
-@import '~pretty-checkbox/src/pretty-checkbox.scss';
 
 body{
   margin: 0; 
+  
+}
+
+#timer{
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+  font-size: 2rem; 
+  color: red;   
 }
 
 
 .gameboardContainer{
-    display: flex;
-    flex-direction: column; 
-    border: solid purple; 
-    width: 100vw;
-    height: 100vh; 
+  display: flex;
+  flex-direction: column; 
+  width: 100vw;
+  height: 100vh; 
+  background: black; 
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
+  color: white; 
 }
 
 .gameboardHeader {
   color: white;
+  padding-bottom: 35px;
   background-color: black;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  height: 30vh; 
+  width: 100vw;
 }
 
+
+.score{
+  background-color: white;
+  color: black;
+  width: 200px; 
+}
 .boardCat {
   font-size: 2rem; 
   text-align: center;
@@ -26,16 +48,22 @@ body{
 
 .gameboard{
   display: flex;
-  border: solid yellow;
+  /* border: solid yellow; */
   height: 100vh; 
 }
 
 .boardQues {
     border: solid black;
     height: 13.5vh;
-    font-size: 2rem; 
+    font-size: 2.5rem; 
     text-align: center;
     padding-top: 8%; 
+    cursor: pointer;
+
+}
+
+.boardQues:hover{
+  color: grey; 
 }
 
 .disabled {
@@ -87,7 +115,6 @@ body{
   }
 
   #answerChoices{
-    border: solid black; 
     display: flex; 
     flex-direction: column;
     height: 50%;  
@@ -95,19 +122,16 @@ body{
 
   .answerChoicesR1{
     display: flex; 
-    border: solid orange; 
     height: 50%;
     width: 100%; 
   }
 
   .answerChoicesR2{
     display: flex; 
-    border: solid orange; 
     height: 50%; 
   }
 
   .answerChoicesC1R1, .answerChoicesC2R1, .answerChoicesC1R2, .answerChoicesC2R2 {
-    border: solid blue; 
     width: 50%; 
     font-size: 2rem; 
     text-align: center; 
@@ -115,14 +139,32 @@ body{
   }
 
   .questionTextBox{
-    border: solid purple; 
-    height: 30%; 
+    height: auto; 
+    background-color: black; 
+    
   }
 
   #questionText{
     font-size: 4rem; 
     text-align: center;
+    color: white;
+    padding: 30px; 
   }
 
 
-  /* radio button */
+  /* sweet alert */
+
+  .swal-modal {
+    background-color: black;
+    border: 3px solid white;
+  
+  }
+
+  .swal-title{
+    color: white; 
+  }
+
+  .swal-text {
+    color: white; 
+    font-size: 2rem; 
+  }
