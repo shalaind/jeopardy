@@ -9,6 +9,7 @@ let timerText = document.getElementById('timer')
 let questionObj = {};
 let myPoints = 0; 
 let scoreDisplay1 = document.getElementById('player1Score')
+let checkCounter = 0; 
 
 var aimImg = document.createElement("aimImg");
  
@@ -40,7 +41,9 @@ $('.boardQues').on('click', function(eventObject){
 
 
 
+    checkCounter++; 
 
+    console.log(checkCounter)
     assignQandA(category, dollarValue); 
     startTimer();
 
@@ -48,6 +51,11 @@ $('.boardQues').on('click', function(eventObject){
     console.log(eventObject.target.className)
     modal.style.display = "block";
 });
+
+
+//for loop to end game 
+
+
 
 // close the modal from X 
 $('.close').on('click', function(){
@@ -79,7 +87,6 @@ function startTimer() {
         
         //stop counter 
         clearInterval(timerCount);
-     
         }
     }
 }
@@ -201,6 +208,15 @@ function submitBtn(){
          
            swal ( "You're wrong!" ,  "You lose " + questionObj.dollarvalue + " points" )
     }
+
+
+    // if(checkCounter == 3){
+    //     console.log("it worked")
+    //     modal.style.display = "block";
+
+    //     // swal ( "Times Up!" ,  "You lose " + questionObj.dollarvalue + " points" )
+    //     console.log("sweet alert worked too")
+    // }
        
 }
 
@@ -665,82 +681,82 @@ category: 'category4',
                 },
                 {
                     id: 3,
-                    text: "Norbit"
+                    text: "Barber Shop"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my third question',
-            rightchoice: 'Choice 2',
+            questiontext: 'This scene from the movie ___ , shows a wife and her husband arguing in the car about who moved the drivers seat',
+            rightchoice: 'Norbit',
             dollarvalue: 300,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Nutty Professor: The Klumps"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Daddy Day Care"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Norbit"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Life"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my fourth question',
-            rightchoice: 'Choice 2',
+            questiontext: 'In this scene from the movie ____ , a girl has her necklace snatched from her former boyfriend ',
+            rightchoice: 'ATL',
             dollarvalue: 400,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "ATL"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "This Christmas"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Takers"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Atlanta"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my fifth question',
-            rightchoice: 'Choice 2',
+            questiontext: "In the movie, Malibu's Most Wanted, the character 'Tec' owned this game console",
+            rightchoice: 'Game Cast',
             dollarvalue: 500,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Dream Cast"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Dream Cube"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Game Cube"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Game Cast"
                 }
 
             ]
@@ -748,136 +764,7 @@ category: 'category4',
     ]
 },
 
-{
-    category: 'category5',
-    questions: [
-        {
-            questiontext: 'This is the capital of Mexico',
-            rightchoice: 'Choice 2',
-            dollarvalue: 100,
-            choices: [
-                {
-                    id: 0,
-                    text: "Choice 1"
-                },
-                {
-                    id: 1,
-                    text: "Choice 2"
-                }
-                ,
-                {
-                    id: 2,
-                    text: "Choice 3"
-                },
-                {
-                    id: 3,
-                    text: "Choice 4"
-                }
 
-            ]
-        },
-        {
-            questiontext: 'This is my second question',
-            rightchoice: 'Choice 2',
-            dollarvalue: 200,
-            choices: [
-                {
-                    id: 0,
-                    text: "Choice 1"
-                },
-                {
-                    id: 1,
-                    text: "Choice 2"
-                }
-                ,
-                {
-                    id: 2,
-                    text: "Choice 3"
-                },
-                {
-                    id: 3,
-                    text: "Choice 4"
-                }
-
-            ]
-        },
-        {
-            questiontext: 'This is my third question',
-            rightchoice: 'Choice 2',
-            dollarvalue: 300,
-            choices: [
-                {
-                    id: 0,
-                    text: "Choice 1"
-                },
-                {
-                    id: 1,
-                    text: "Choice 2"
-                }
-                ,
-                {
-                    id: 2,
-                    text: "Choice 3"
-                },
-                {
-                    id: 3,
-                    text: "Choice 4"
-                }
-
-            ]
-        },
-        {
-            questiontext: 'This is my fourth question',
-            rightchoice: 'Choice 2',
-            dollarvalue: 400,
-            choices: [
-                {
-                    id: 0,
-                    text: "Choice 1"
-                },
-                {
-                    id: 1,
-                    text: "Choice 2"
-                }
-                ,
-                {
-                    id: 2,
-                    text: "Choice 3"
-                },
-                {
-                    id: 3,
-                    text: "Choice 4"
-                }
-
-            ]
-        },
-        {
-            questiontext: 'This is my fifth question',
-            rightchoice: 'Choice 2',
-            dollarvalue: 500,
-            choices: [
-                {
-                    id: 0,
-                    text: "Choice 1"
-                },
-                {
-                    id: 1,
-                    text: "Choice 2"
-                }
-                ,
-                {
-                    id: 2,
-                    text: "Choice 3"
-                },
-                {
-                    id: 3,
-                    text: "Choice 4"
-                }
-
-            ]
-        }
-    ]
-}
 
 ]
 
