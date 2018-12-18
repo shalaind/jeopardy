@@ -197,8 +197,6 @@ function submitBtn(){
         myPoints -= questionObj.dollarvalue;
         scoreDisplay1.innerHTML = "score: " + myPoints; 
 
-
-        
         //Stop The Timer
            clearInterval(timerCount)
     
