@@ -6,7 +6,7 @@ body{
 .gameboardContainer{
     display: flex;
     flex-direction: column; 
-    border: solid black; 
+    border: solid purple; 
     width: 100vw;
     height: 100vh; 
 }
@@ -14,15 +14,26 @@ body{
 .gameboardHeader {
   color: white;
   background-color: black;
+  text-align: center;
+}
+
+.boardCat {
+  font-size: 2rem; 
+  text-align: center;
 }
 
 .gameboard{
   display: flex;
+  border: solid yellow;
+  height: 100vh; 
 }
 
 .boardQues {
     border: solid black;
-
+    height: 20%;
+    font-size: 2rem; 
+    text-align: center;
+    padding-top: 10%; 
 }
 
 .disabled {
