@@ -1,6 +1,23 @@
-.gameboard{
+body{
+  margin: 0; 
+}
+
+
+.gameboardContainer{
     display: flex;
+    flex-direction: column; 
     border: solid black; 
+    width: 100vw;
+    height: 100vh; 
+}
+
+.gameboardHeader {
+  color: white;
+  background-color: black;
+}
+
+.gameboard{
+  display: flex;
 }
 
 .boardQues {
@@ -13,6 +30,7 @@
   background: black; 
   pointer-events: none;
 }
+
 
 
 /* The Modal (background) */

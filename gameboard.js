@@ -188,8 +188,6 @@ function submitBtn(){
 
     //Close the Question Window
     modal.style.display = "none";
-
-   
 }
 
 function timesUp(){
