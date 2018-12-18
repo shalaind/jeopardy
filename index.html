@@ -6,8 +6,10 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Jeopardy</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/pretty-checkbox@3.0/dist/pretty-checkbox.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha256-3edrmyuQ0w65f8gfBsqowzjJe2iM6n0nKciPUp8y+7E=" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
     <script defer src="gameboard.js"></script>
 </head>
 <body>
@@ -144,26 +146,57 @@
         <div class="modal-content">
 
             <div><p id="timer">10</p></div>
-            <span class="close">&times;</span>
+            <span class="close">Sike, go back!</span>
             <div class="questionTextBox">
                 <h1 id="questionText">Put your question or phrase in here</h1>
             </div>
-            <div id="answerChoices">
-                <div>
-                    <input id="inputChoice1" type="radio" name="choice" value="text"> <span id="ansChoice1">sometxt</span>
+            <div id="answerChoices" class="btn-group btn-group-toggle" data-toggle="buttons">
+
+                <div class="answerChoicesR1">
+                    <div class="answerChoicesC1R1">
+                         <div>
+                                <input id="inputChoice1" id= "option1" type="radio" name="choice" value="text"> <span id="ansChoice1">sometxt</span>
+                        </div> 
+                    </div>
+
+                    <div class="answerChoicesC2R1">
+                        <div>
+                            <input id="inputChoice2" type="radio" name="choice" value="text"> <span id="ansChoice2">sometxt</span>
+                        </div>
+                    </div>
                 </div>
-                <div>
-                    <input id="inputChoice2" type="radio" name="choice" value="text"> <span id="ansChoice2">sometxt</span>
+
+                <div class="answerChoicesR2">
+                    <div class="answerChoicesC1R2">
+                        <div>
+                            <input id="inputChoice3" type="radio" name="choice" value="text"> <span id="ansChoice3">sometxt</span>
+                        </div>
+                    </div>
+
+                    <div class="answerChoicesC1R2">
+                        <div>
+                            <input id="inputChoice4" type="radio" name="choice" value="text"> <span id="ansChoice4">sometxt</span>
+                        </div>
+                    </div>
+
+
+
+
+
+
+
+
+
+
+
+
                 </div>
-                <div>
-                    <input id="inputChoice3" type="radio" name="choice" value="text"> <span id="ansChoice3">sometxt</span>
-                </div>
-                <div>
-                    <input id="inputChoice4" type="radio" name="choice" value="text"> <span id="ansChoice4">sometxt</span>
-                </div>
+
+
+
             </div>
             <div class="submitBtn">
-                <button id="submitBtn">Submit</button>
+                <button class= "btn btn-dark btn-secondary btn-lg btn-block" id="submitBtn">Submit</button>
             </div>
 
 

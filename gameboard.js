@@ -64,7 +64,7 @@ $('.close').on('click', function(){
 function startTimer() {
 //init timer countdown 
    
-    var i = 11; 
+    var i = 30; 
     timerCount = setInterval(countDown, 1000);
 
     function countDown (){

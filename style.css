@@ -1,3 +1,5 @@
+@import '~pretty-checkbox/src/pretty-checkbox.scss';
+
 body{
   margin: 0; 
 }
@@ -30,10 +32,10 @@ body{
 
 .boardQues {
     border: solid black;
-    height: 20%;
+    height: 13.5vh;
     font-size: 2rem; 
     text-align: center;
-    padding-top: 10%; 
+    padding-top: 8%; 
 }
 
 .disabled {
@@ -41,6 +43,7 @@ body{
   background: black; 
   pointer-events: none;
 }
+
 
 
 
@@ -61,10 +64,11 @@ body{
   /* Modal Content/Box */
   .modal-content {
     background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
+    /* margin: 15% auto; 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
+    height: 100%; 
+    width: 100%; /* Could be more or less, depending on screen size */
   }
   
   /* The Close Button */
@@ -81,3 +85,44 @@ body{
     text-decoration: none;
     cursor: pointer;
   }
+
+  #answerChoices{
+    border: solid black; 
+    display: flex; 
+    flex-direction: column;
+    height: 50%;  
+  }
+
+  .answerChoicesR1{
+    display: flex; 
+    border: solid orange; 
+    height: 50%;
+    width: 100%; 
+  }
+
+  .answerChoicesR2{
+    display: flex; 
+    border: solid orange; 
+    height: 50%; 
+  }
+
+  .answerChoicesC1R1, .answerChoicesC2R1, .answerChoicesC1R2, .answerChoicesC2R2 {
+    border: solid blue; 
+    width: 50%; 
+    font-size: 2rem; 
+    text-align: center; 
+    padding-top: 5%; 
+  }
+
+  .questionTextBox{
+    border: solid purple; 
+    height: 30%; 
+  }
+
+  #questionText{
+    font-size: 4rem; 
+    text-align: center;
+  }
+
+
+  /* radio button */
