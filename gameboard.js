@@ -409,76 +409,76 @@ category: 'category2',
             ]
         },
         {
-            questiontext: 'This is my third question',
-            rightchoice: 'Choice 2',
+            questiontext: 'Give me what you got for a pork chop, She threw at me like I was a short stop',
+            rightchoice: 'Right Thurr',
             dollarvalue: 300,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Holidae Inn"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Right Thurr"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "I Like That"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "In Da Club"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my fourth question',
-            rightchoice: 'Choice 2',
+            questiontext: 'If you a fly gal, get your nails done, Get a pedicure, get your hair did',
+            rightchoice: 'Work It',
             dollarvalue: 400,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Work It"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Fly Gal"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "The Rain"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Lose Control"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my fifth question',
-            rightchoice: 'Choice 2',
+            questiontext: 'I ain’t tryin’ to beef, I’m tryin’ to get my drink on, and my diamonds, my fitted, and my mink on',
+            rightchoice: 'Just a Lil Bit',
             dollarvalue: 500,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Stunt 101"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Smile"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Just a Lil Bit"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "My Buddy"
                 }
 
             ]
@@ -565,51 +565,51 @@ category: 'category3',
             ]
         },
         {
-            questiontext: 'This is my fourth question',
-            rightchoice: 'Choice 2',
+            questiontext: "The group Day26 was casted within this show ",
+            rightchoice: 'Making The Band 4',
             dollarvalue: 400,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "Making The Band 4"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "Making The Band 3"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Making The Band  2"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Making The Band 1"
                 }
 
             ]
         },
         {
-            questiontext: 'This is my fifth question',
+            questiontext: 'Professor Oglevee taught this subject at Santa Monica College',
             rightchoice: 'Choice 2',
             dollarvalue: 500,
             choices: [
                 {
                     id: 0,
-                    text: "Choice 1"
+                    text: "History"
                 },
                 {
                     id: 1,
-                    text: "Choice 2"
+                    text: "English"
                 }
                 ,
                 {
                     id: 2,
-                    text: "Choice 3"
+                    text: "Accounting"
                 },
                 {
                     id: 3,
-                    text: "Choice 4"
+                    text: "Chemistry"
                 }
 
             ]
