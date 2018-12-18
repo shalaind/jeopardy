@@ -53,7 +53,7 @@ $('.close').on('click', function(){
 function startTimer() {
 //init timer countdown 
    
-    var i = 30; 
+    var i = 11; 
     timerCount = setInterval(countDown, 1000);
 
     function countDown (){
@@ -65,15 +65,14 @@ function startTimer() {
         //play buzzer sound 
         let buzzer = new Audio ('sounds/timesup.mp3')
         buzzer.play(); 
+        modal.style.display = "none";
+        swal ( "Times Up!" ,  "You lose " + questionObj.dollarvalue + " points" )
         
         //stop counter 
         clearInterval(timerCount);
-       
-         modal.style.display = "none";
+     
         }
-        //next, show times up screen and subtract points from score 
     }
-
 }
 
 //display question and answer choice parameters inside the modal//
