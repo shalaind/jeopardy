@@ -376,7 +376,7 @@ category: 'category2',
     questions: [
         {
             questiontext: "From the C-O to across the seas, I'm guaranteed to everybody bounce with me",
-            rightchoice: 'Choice 2',
+            rightchoice: 'Take Ya Home',
             dollarvalue: 100,
             choices: [
                 {
