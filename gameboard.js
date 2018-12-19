@@ -563,7 +563,7 @@ category: 'category3',
             choices: [
                 {
                     id: 0,
-                    text: "Flavor of Love 1"
+                    text: "Flavor of Love"
                 },
                 {
                     id: 1,
