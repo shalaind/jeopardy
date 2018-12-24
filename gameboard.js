@@ -11,12 +11,6 @@ let myPoints = 0;
 let scoreDisplay1 = document.getElementById('player1Score')
 let checkCounter = 0; 
 
-var aimImg = document.createElement("aimImg");
- 
-aimImg.src = "images/aim-screen.jpg";
-modal.appendChild(aimImg);
-
-console.log(aimImg.src)
 
 
 
@@ -70,7 +64,7 @@ $('.close').on('click', function(){
 function startTimer() {
 //init timer countdown 
    
-    var i = 11; 
+    var i = 16; 
     timerCount = setInterval(countDown, 1000);
 
     function countDown (){
@@ -99,10 +93,10 @@ let ansChoice2 = document.getElementById('ansChoice2');
 let ansChoice3 = document.getElementById('ansChoice3');
 let ansChoice4 = document.getElementById('ansChoice4');
 
-let inputChoice1 = document.getElementById('inputChoice1');
-let inputChoice2 = document.getElementById('inputChoice2');
-let inputChoice3 = document.getElementById('inputChoice3');
-let inputChoice4 = document.getElementById('inputChoice4');
+let inputChoice1 = document.getElementById('radio1');
+let inputChoice2 = document.getElementById('radio2');
+let inputChoice3 = document.getElementById('radio3');
+let inputChoice4 = document.getElementById('radio4');
 
 function assignQandA(category, dollarValue){
     //Remove Any $ from dollarValue
@@ -161,7 +155,7 @@ function assignQandA(category, dollarValue){
 $('#submitBtn').on('click', submitBtn);
 
 function submitBtn(){
-    var inputChoices = document.getElementsByName("choice");
+    var inputChoices = document.getElementsByName("radio");
     var userAnswer; 
     
     for(let i = 0; i < inputChoices.length; i++){
