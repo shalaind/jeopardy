@@ -10,28 +10,43 @@ body{
   color: red;   
 }
 
+.textOverlay{
+  text-align: center; 
+  padding-top: 7%;
+  padding-left: 32%;  
+  position: absolute;
+}
+
+.splashBg{
+  background-image: url('/images/bg.gif');
+  background-size: cover; 
+  height: 100vh; 
+}
+
 
 .gameboardContainer{
   display: flex;
   flex-direction: column; 
   width: 100vw;
   height: 100vh; 
-  background: black; 
+  /* background: black;  */
   font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif; 
-  color: white; 
+  /* color: white;  */
 }
 
 .gameboardHeader {
   color: white;
   padding-bottom: 35px;
-  background-color: black;
+  padding-top: 25px;
+  background-color: rgb(255, 238, 6);
+  /* background-image: url('/images/bg.gif');  */
   text-align: center;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-content: center;
   align-items: center;
-  height: 30vh; 
+  height: 35vh; 
   width: 100vw;
 }
 
@@ -53,13 +68,29 @@ body{
 }
 
 .boardQues {
-    border: solid black;
+    /* border: solid black; */
     height: 13.5vh;
     font-size: 2.5rem; 
     text-align: center;
     padding-top: 8%; 
     cursor: pointer;
 
+}
+
+.category1{
+  color: red; 
+}
+
+.category2{
+  color: blue; 
+}
+
+.category3{
+  color: green; 
+}
+
+.category4{
+  color: purple;
 }
 
 .boardQues:hover{

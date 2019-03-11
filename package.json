@@ -1,0 +1,22 @@
+{
+  "name": "jeopardy",
+  "version": "1.0.0",
+  "description": "**How To Play** For The Culture is a trivia game based on the popular game show \"Jeopardy\". The objective of the game is to earn as many points as possible! The user will navigate through the game board and answer the prompts that appear accordingly.",
+  "main": "backup.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shalaind/jeopardy.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shalaind/jeopardy/issues"
+  },
+  "homepage": "https://github.com/shalaind/jeopardy#readme",
+  "dependencies": {
+    "bulma": "^0.7.4"
+  }
+}
