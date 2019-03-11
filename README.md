@@ -1,7 +1,7 @@
-# Unit 1 Project - For The Culture - Early 2000's Edition 
+# Unit 1 Project - Pop Culture Quiz - Early 2000's Edition 
 
 **How To Play**
-For The Culture is a trivia game based on the popular game show "Jeopardy". The objective of the game is to earn as many points as possible! The user will navigate through the game board and answer the prompts that appear accordingly. 
+Pop Culture Quiz is a trivia game based on the popular game show "Jeopardy". The objective of the game is to earn as many points as possible! The user will navigate through the game board and answer the prompts that appear accordingly. 
 
 **User Story**
 - As the user is on the home screen, they will choose if there are 1 or 2 players.
@@ -12,6 +12,12 @@ For The Culture is a trivia game based on the popular game show "Jeopardy". The 
 
 **Final Look**
 
+![final look](image2.png)
+
+![final look](image1.png)
+![final look](image3.png)
+
+
 
 **Links**
 
@@ -19,7 +25,7 @@ For The Culture is a trivia game based on the popular game show "Jeopardy". The 
 https://trello.com/b/w47VSRfA/unit-1-project-jeopardy
 
 ## Webpage 
-https://shalaind.github.io/jeopardy/
+https://pop-culture-quiz.netlify.com/
 
 ## Resources 
 - https://getbootstrap.com/

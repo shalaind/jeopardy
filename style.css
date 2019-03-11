@@ -98,8 +98,8 @@ body{
 }
 
 .disabled {
-  color: black;
-  background: black; 
+  color: white;
+  background: white; 
   pointer-events: none;
 }
 
@@ -187,7 +187,7 @@ body{
 
   .swal-modal {
     background-color: black;
-    border: 3px solid white;
+    /* border: 3px solid white; */
   
   }
 
